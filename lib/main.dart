@@ -12,7 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   initAppTheme();
   initGoRouter();
-  await dotenv.load(fileName: "assets/.env");
+  await dotenv.load(fileName: "assets/env");
   if (dotenv.env['API_URL'] != null &&
       dotenv.env['API_URL']!.isNotEmpty &&
       dotenv.env['KEY'] != null &&
