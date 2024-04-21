@@ -8,6 +8,8 @@ class ApiPhotos {
   int total = 0;
   int page = 1;
 
+  int get perPage => GetIt.I<PixabayAPI>().perPage;
+
   String getLargeImageURL(Photo e) {
     if (e.largeImageURL.isNotEmpty) {
       return e.largeImageURL;

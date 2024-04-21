@@ -38,8 +38,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   bool checkEndLoadedAllPhotos() {
-    for (PhotoView photoWid in state.listPhotoVw) {
-      if (!(photoWid.wg as CardPhoto).isEndLoaded) {
+    int statrtIndex = state.listPhotoVw.length -1;
+    int endIndex = state.listPhotoVw.length - GetIt.I<ApiPhotos>().perPage;
+    for (int index = statrtIndex; index >= endIndex; index--) {
+      if (!(state.listPhotoVw[index].wg as CardPhoto).isEndLoaded) {
         return false;
       }
     }
