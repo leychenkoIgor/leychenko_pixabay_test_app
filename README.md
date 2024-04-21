@@ -1,4 +1,4 @@
-#DEMO Pixabay API
+# DEMO Pixabay API
 This is a program to demonstrate the functionality of the Pixabay API service.
 Developed using the Flutter framework.
 Link to Pixabay API: https://pixabay.com/api/docs/
