@@ -1,0 +1,80 @@
+import 'package:flutter/material.dart';
+import 'package:insta_image_viewer/insta_image_viewer.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+
+import 'info_icon.dart';
+import 'info_number.dart';
+
+// ignore: must_be_immutable
+class CardPhoto extends StatelessWidget {
+  CardPhoto(
+      {super.key,
+      required this.largeImageURL,
+      required this.previewURL,
+      required this.views,
+      required this.likes,
+      required this.callEndLoaded});
+  final String largeImageURL;
+  final String previewURL;
+  final int views;
+  final int likes;
+  bool isEndLoaded = false;
+  final Function callEndLoaded;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.black12,
+      child: Stack(
+        alignment: AlignmentDirectional.center,
+        children: [
+          CachedNetworkImage(
+            imageUrl: previewURL,
+            placeholder: (context, url) => const CircularProgressIndicator(),
+            errorWidget: (context, url, error) {
+              isEndLoaded = true;
+              callEndLoaded();
+              return const Icon(Icons.error);
+            },
+            imageBuilder: (context, imageProvider) {
+              isEndLoaded = true;
+              callEndLoaded();
+              return InstaImageViewer(
+                  backgroundIsTransparent: true,
+                  imageUrl: largeImageURL,
+                  child: Image(
+                    image: imageProvider,
+                  ));
+            },
+          ),
+          const Positioned(
+            top: 5,
+            right: 5,
+            child: InfoIcon(
+              assetName: 'assets/img/iconmonstr-eye-9.svg',
+            ),
+          ),
+          const Positioned(
+            bottom: 10,
+            right: 5,
+            child: InfoIcon(
+              assetName: 'assets/img/heart-icon.svg',
+            ),
+          ),
+          Positioned(
+              top: 30,
+              right: 5,
+              child: InfoNumber(
+                viewNumber: views,
+              )),
+          Positioned(
+              bottom: 2,
+              right: 5,
+              child: InfoNumber(
+                viewNumber: likes,
+              )),
+        ],
+      ),
+    );
+  }
+}
