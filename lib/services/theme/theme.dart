@@ -9,6 +9,7 @@ class AppColors {
 
   final Color appBarIconButtonBackgroundColor = colorFromHex("F5F4F8");
   final Color cardColor = colorFromHex("F5F4F8");
+  final Color infoIconBackground = colorFromHex("8BC83F");
 }
 
 class AppTextStyles {

@@ -60,28 +60,28 @@ class CardPhoto extends StatelessWidget {
             },
           ),
           const Positioned(
-            top: 5,
-            right: 5,
+            top: 10,
+            right: 10,
             child: InfoIcon(
               assetName: 'assets/img/iconmonstr-eye-9.svg',
             ),
           ),
           const Positioned(
-            bottom: 10,
-            right: 5,
+            top: 75,
+            right: 10,
             child: InfoIcon(
               assetName: 'assets/img/heart-icon.svg',
             ),
           ),
           Positioned(
-              top: 30,
-              right: 5,
+              top: 42,
+              right: 10,
               child: InfoNumber(
                 viewNumber: views,
               )),
           Positioned(
-              bottom: 2,
-              right: 5,
+              top: 108,
+              right: 10,
               child: InfoNumber(
                 viewNumber: likes,
               )),
