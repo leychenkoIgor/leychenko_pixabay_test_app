@@ -14,6 +14,7 @@ class CardPhoto extends StatelessWidget {
       required this.views,
       required this.likes,
       required this.callEndLoaded});
+
   final String largeImageURL;
   final String previewURL;
   final int views;
@@ -24,7 +25,10 @@ class CardPhoto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black12,
+      decoration: BoxDecoration(
+        color: Colors.black12,
+        borderRadius: BorderRadius.circular(20), // радіус бордера
+      ),
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
@@ -42,8 +46,16 @@ class CardPhoto extends StatelessWidget {
               return InstaImageViewer(
                   backgroundIsTransparent: true,
                   imageUrl: largeImageURL,
-                  child: Image(
-                    image: imageProvider,
+                  child: Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                        image: imageProvider,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ));
             },
           ),

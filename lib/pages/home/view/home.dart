@@ -35,7 +35,7 @@ class HomePageState extends State<HomePage> {
             title: "PIXABAY IMAGES",
           ),
           SliverPadding(
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(10),
               sliver: BlocBuilder<HomeBloc, HomeState>(
                 bloc: homeBloc,
                 builder: (context, state) {
@@ -50,9 +50,9 @@ class HomePageState extends State<HomePage> {
                       gridDelegate:
                           const SliverGridDelegateWithMaxCrossAxisExtent(
                         maxCrossAxisExtent: 300.0,
-                        mainAxisSpacing: 3.0,
-                        crossAxisSpacing: 3.0,
-                        childAspectRatio: 2.0,
+                        mainAxisSpacing: 10.0,
+                        crossAxisSpacing: 10.0,
+                        childAspectRatio: 0.8,
                       ),
                       delegate: SliverChildBuilderDelegate(
                         (BuildContext context, int index) {

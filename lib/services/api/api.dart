@@ -34,7 +34,7 @@ class ApiPhotos {
   List<PhotoModel> createListPhotoModel(List<Photo> hits) {
     return hits
         .map((e) => PhotoModel(
-            previewURL: e.previewURL,
+            previewURL: e.webformatURL,
             largeImageURL: getLargeImageURL(e),
             views: e.views,
             likes: e.likes,
