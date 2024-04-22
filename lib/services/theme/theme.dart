@@ -10,6 +10,9 @@ class AppColors {
   final Color appBarIconButtonBackgroundColor = colorFromHex("F5F4F8");
   final Color cardColor = colorFromHex("F5F4F8");
   final Color infoIconBackground = colorFromHex("8BC83F");
+  final Color infoIconColor = Colors.white;
+  final Color infoNumberBackground = Colors.yellow;
+  final Color infoNumberText = Colors.black;
 }
 
 class AppTextStyles {

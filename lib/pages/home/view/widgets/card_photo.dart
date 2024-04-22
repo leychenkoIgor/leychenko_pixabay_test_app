@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insta_image_viewer/insta_image_viewer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:leychenko_pixabay_test_app/services/theme/theme.dart';
 
 import 'info_icon.dart';
 import 'info_number.dart';
@@ -26,7 +27,7 @@ class CardPhoto extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.black12,
+        color: appColors.cardColor,
         borderRadius: BorderRadius.circular(20), // радіус бордера
       ),
       child: Stack(

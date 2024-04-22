@@ -16,7 +16,7 @@ class InfoIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
       ),
       child: SvgPicture.asset(
-        colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+        colorFilter: ColorFilter.mode(appColors.infoIconColor, BlendMode.srcIn),
         assetName, //'assets/img/heart-icon.svg',
       ),
     );

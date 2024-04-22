@@ -9,12 +9,12 @@ class InfoNumber extends StatelessWidget {
     return Container(
         padding: const EdgeInsets.fromLTRB(6,3,6,3),
         decoration: BoxDecoration(
-          color: Colors.yellow,
+          color: appColors.infoNumberBackground,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Text(
           viewNumber.toString(),
-          style: const TextStyle(color: Colors.black),
+          style: TextStyle(color: appColors.infoNumberText),
         ));
   }
 }
