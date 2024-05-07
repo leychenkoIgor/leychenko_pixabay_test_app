@@ -8,6 +8,7 @@ class ApiPhotos {
   int total = 0;
   int page = 1;
 
+
   int get perPage => GetIt.I<PixabayAPI>().perPage;
 
   String getLargeImageURL(Photo e) {
@@ -34,10 +35,13 @@ class ApiPhotos {
   List<PhotoModel> createListPhotoModel(List<Photo> hits) {
     return hits
         .map((e) => PhotoModel(
-            previewURL: e.webformatURL,
+            previewURL: e.previewURL,
+            webformatURL: e.webformatURL,
             largeImageURL: getLargeImageURL(e),
             views: e.views,
             likes: e.likes,
+            imageHeight: e.imageHeight,
+            imageWidth: e.imageWidth,
             id: e.id))
         .toList();
   }
