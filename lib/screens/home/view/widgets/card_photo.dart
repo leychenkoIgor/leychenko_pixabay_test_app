@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:leychenko_pixabay_test_app/go_router/router.dart';
+import 'package:leychenko_pixabay_test_app/resources/resources.dart';
 import 'package:leychenko_pixabay_test_app/services/api/api.dart';
 import 'package:leychenko_pixabay_test_app/services/theme/theme.dart';
 
@@ -69,14 +70,14 @@ class CardPhoto extends StatelessWidget {
           top: 10,
           right: 10,
           child: InfoIcon(
-            assetName: 'assets/img/iconmonstr-eye-9.svg',
+            assetName: Svgs.iconmonstrEye9,
           ),
         ),
         const Positioned(
           top: 75,
           right: 10,
           child: InfoIcon(
-            assetName: 'assets/img/heart-icon.svg',
+            assetName: Svgs.heartIcon,
           ),
         ),
         Positioned(
