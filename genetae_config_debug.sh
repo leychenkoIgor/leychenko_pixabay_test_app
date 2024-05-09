@@ -1,0 +1,1 @@
+flutter pub run environment_config:generate --config=environment_config_debug.yaml

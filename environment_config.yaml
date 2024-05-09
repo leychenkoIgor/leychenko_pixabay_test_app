@@ -1,0 +1,8 @@
+environment_config:
+  path: services/envelopments/environment_config.dart
+  class: EnvironmentConfig
+  fields:
+    apiUrl:
+      default: "API_URL"
+    apiKey:
+      default: "APY_KEY"
