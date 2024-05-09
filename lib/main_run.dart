@@ -1,27 +1,22 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
+import 'envelopments.dart';
 import 'go_router/router.dart';
 import 'services/api/api.dart';
 import 'services/theme/theme.dart';
 import 'package:pixabay_api/pixabay_api.dart';
 
-void main() async {
+void mainApp(Envelopments arg) async {
   WidgetsFlutterBinding.ensureInitialized();
+  GetIt.instance.registerSingleton<Envelopments>(arg);
   initAppTheme();
   initGoRouter();
-  await dotenv.load(fileName: "assets/env");
-  if (dotenv.env['API_URL'] != null &&
-      dotenv.env['API_URL']!.isNotEmpty &&
-      dotenv.env['KEY'] != null &&
-      dotenv.env['KEY']!.isNotEmpty) {
-    GetIt.instance.registerSingleton<PixabayAPI>(
-        PixabayAPI(dotenv.env['API_URL']!, dotenv.env['KEY']!));
-  } else {
-    exit(404);
-  }
+
+  GetIt.instance
+      .registerSingleton<PixabayAPI>(PixabayAPI(arg.apiUrl, arg.apiKey));
+
   GetIt.instance.registerSingleton<ApiPhotos>(ApiPhotos());
   runApp(const MyApp());
 }

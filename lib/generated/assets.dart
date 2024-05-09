@@ -2,8 +2,8 @@
 class Assets {
   Assets._();
 
-  static const String assets = 'assets/env';
   static const String imgHeartIcon = 'assets/img/heart-icon.svg';
   static const String imgIconmonstrEye9 = 'assets/img/iconmonstr-eye-9.svg';
+  static const String viewPhotoPage = 'lib/screens/photo_page/view/photo_page.dart';
 
 }
