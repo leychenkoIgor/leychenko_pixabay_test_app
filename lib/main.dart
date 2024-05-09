@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'services/envelopments/environment_config.dart';
-import 'services/envelopments/models/envelopments.dart';
 import 'go_router/router.dart';
 import 'services/api/api.dart';
 import 'services/theme/theme.dart';
