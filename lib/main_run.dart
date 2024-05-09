@@ -2,20 +2,20 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'envelopments.dart';
+import 'services/envelopments/models/envelopments.dart';
 import 'go_router/router.dart';
 import 'services/api/api.dart';
 import 'services/theme/theme.dart';
 import 'package:pixabay_api/pixabay_api.dart';
 
-void mainApp(Envelopments arg) async {
+void mainApp(Envelopments env) async {
   WidgetsFlutterBinding.ensureInitialized();
-  GetIt.instance.registerSingleton<Envelopments>(arg);
+  GetIt.instance.registerSingleton<Envelopments>(env);
   initAppTheme();
   initGoRouter();
 
   GetIt.instance
-      .registerSingleton<PixabayAPI>(PixabayAPI(arg.apiUrl, arg.apiKey));
+      .registerSingleton<PixabayAPI>(PixabayAPI(env.apiUrl, env.apiKey));
 
   GetIt.instance.registerSingleton<ApiPhotos>(ApiPhotos());
   runApp(const MyApp());
