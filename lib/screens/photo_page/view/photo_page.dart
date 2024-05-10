@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:leychenko_pixabay_test_app/services/api/api.dart';
+import 'package:leychenko_pixabay_test_app/services/i18n/app_localization_delegate.dart';
 import 'package:leychenko_pixabay_test_app/services/theme/theme.dart';
 import 'package:gap/gap.dart';
 
@@ -44,7 +45,7 @@ class PhotoPageScreenState extends State<PhotoPageScreen> {
               color: appTheme.appBarTheme.backgroundColor,
               borderRadius: BorderRadius.circular(30),
             ),
-            child: const Text("PHOTO")),
+            child:  Text(appLoc.translate('photo_page_app_bar_label'))),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {

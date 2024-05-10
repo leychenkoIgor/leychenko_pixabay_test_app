@@ -1,7 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_it/get_it.dart';
+import 'package:intl/intl.dart';
+import 'package:leychenko_pixabay_test_app/services/i18n/app_localization_delegate.dart';
 import 'services/envelopments/environment_config.dart';
 import 'go_router/router.dart';
 import 'services/api/api.dart';
@@ -13,7 +16,6 @@ void main() async {
   // GetIt.instance.registerSingleton<EnvironmentConfig>(EnvironmentConfig);
   initAppTheme();
   initGoRouter();
-
   GetIt.instance.registerSingleton<PixabayAPI>(
       PixabayAPI(EnvironmentConfig.apiUrl, EnvironmentConfig.apiKey));
 
@@ -28,9 +30,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'PIXABAY IMAGES',
       theme: appTheme,
       routerConfig: goRouter,
+      locale: Locale('uk', ''),
+      localizationsDelegates: [
+        AppLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      localeListResolutionCallback: (locales, supportedLocales) {
+        return Locale('uk', '');
+      },
+      supportedLocales: [
+        const Locale('en', ''),
+        const Locale('uk', ''),
+      ],
     );
   }
 }

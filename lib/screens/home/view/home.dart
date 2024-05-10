@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:leychenko_pixabay_test_app/services/i18n/app_localization_delegate.dart';
+import 'package:leychenko_pixabay_test_app/services/i18n/app_locatization.dart';
 import 'package:leychenko_pixabay_test_app/widgets/widgets.dart';
 import '../block/home_bloc.dart';
 import 'widgets/card_photo.dart';
@@ -29,12 +32,13 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // print(appLoc.translate('home_app_bar_label'));
     return Scaffold(
       body: CustomScrollView(
           controller: homeBloc.scrollController,
           slivers: <Widget>[
-            const AppBarWdg(
-              title: "PIXABAY IMAGES",
+            AppBarWdg(
+              title: appLoc.translate('home_app_bar_label'),
             ),
             SliverPadding(
                 padding: const EdgeInsets.all(10),
