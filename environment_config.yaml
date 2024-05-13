@@ -6,3 +6,6 @@ environment_config:
       default: "API_URL"
     apiKey:
       default: "APY_KEY"
+    supportedLocales:
+      type: List<String>
+      default: [ '"uk"', '"en"', '"pl"', '"fr"' ]
