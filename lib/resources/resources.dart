@@ -1,1 +1,1 @@
-part 'svgs.dart';
+part 'icon_svg.dart';

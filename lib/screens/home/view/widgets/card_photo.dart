@@ -70,14 +70,15 @@ class CardPhoto extends StatelessWidget {
           top: 10,
           right: 10,
           child: InfoIcon(
-            assetName: Svgs.iconmonstrEye9,
+            assetName: IconSvg.iconmonstrEye9,
           ),
         ),
         const Positioned(
           top: 75,
           right: 10,
-          child: InfoIcon(
-            assetName: Svgs.heartIcon,
+          child:
+          InfoIcon(
+            assetName: IconSvg.heartIcon,
           ),
         ),
         Positioned(

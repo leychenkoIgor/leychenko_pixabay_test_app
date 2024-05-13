@@ -20,6 +20,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<HomeLoadingPhotosEvent>((event, emit) => emit(HomeLoadingPhotos()));
     on<HomeLoadedPhotosEvent>((event, emit) => emit(HomeLoadedPhotos()));
     on<HomeEndLoadedPhotoEvent>((event, emit) => checkCompleteList());
+    add(HomeLoadingPhotosEvent());
     loadPhotos();
   }
 

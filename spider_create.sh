@@ -1,1 +1,1 @@
-spider create
+spider build
